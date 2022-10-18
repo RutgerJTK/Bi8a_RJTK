@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Week-1-Web-Mining</title>
+</head>
+<body>
+
+{# Code for #}
+<p>
+    Holy crap it's the homework for week 1! Who would've thunk?!?
+</p>
+<p>
+    <a href="{{ url_for("homepage") }}">Back to the homepage</a>
+</p>
+<p>Ensembl database query searcher</p>
+<form action="/week_1" method="post">
+    <button type="submit"/>Go search some fun shit klootviool</button>
+    <label for="submission_1">Submit your query here: </label>
+    <input type="text" name="query_1" value= {{ request.form.query_1 }} >
+</form>
+
+{# Space divider to clean the website a bit #}
+<h2></h2>
+<hr>
+<h2></h2>
+
+{# Code to parse data to website #}
+
+
+</body>
+</html>
