@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/week1.css') }}">
+{#<link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />#}
+{#<script defer src="https://pyscript.net/alpha/pyscript.js"></script>#}
 <head>
     <meta charset="UTF-8">
     <title>Week-1-Web-Mining</title>
@@ -25,7 +28,27 @@
 <hr>
 <h2></h2>
 
-{# Code to parse data to website #}
+<p>Results:</p>
+
+{% for result in myresults %}
+    {% with result = result.split() %}
+    {% for word in result %}
+        {% if word != query %}
+        <tr>
+            <td>{{ word }}</td>
+        </tr>
+        {% endif %}
+        {% if word == query %}
+        <tr>
+            <td><b>{{ word }}</b></td>
+        </tr>
+        {% endif %}
+    {% endfor %}
+    {% endwith %}
+    <br>
+{% endfor %}
+
+<p>{{ noresults }}</p>
 
 
 </body>
